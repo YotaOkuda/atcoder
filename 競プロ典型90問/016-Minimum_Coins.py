@@ -25,7 +25,9 @@ for countA in range(10000):
         tmp = countA*A + countB*B   # tmp = C円以外の合計値
         if (N - tmp)%C == 0 and tmp <= N:   # N-tmpがC円で割り切れる、かつ、tmpがN以下（未満だとAとBだけでNを満たすときを考慮できない）
             countC = (N - tmp)//C
-            if countA + countB + countC < ans:
+            if countA + countB + countC < ans:  # 最小の枚数を更新
                 ans = countA + countB + countC
 
 print(ans)
+
+# 計算量O(N^2) = 10^8
