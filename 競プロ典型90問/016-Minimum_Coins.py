@@ -1,23 +1,31 @@
 N = int(input())
 A, B, C = map(int, input().split())
 
-rangeA = N//max(A, B, C)
-if rangeA > 9999:
-    rangeA = 9998
+ans = 10000
 
-rangeB = N//B
-rangeC = N//C
-ansA, ansB, ansC = 0, 0, 0
-ans = 9999
-
-for countC in range(rangeA + 1, 0, -1):
-    for countB in range(0, rangeA - countC):
-        for countA in range(0, rangeA - countC - countB):
+for countC in range(10000):
+    for countB in range(10000):
+        if (N - (countC*C + countB*B))%A == 0 and countC*C + countB*B <= N:
+            countA = (N - (countC*C + countB*B))//A
             if A*countA + B*countB + C*countC == N:
                 if countA +countB + countC < ans:
-                    ansA, ansB, ansC = countA, countB, countC
                     ans = countA + countB + countC
 
 print(ans)
 
-# rangeCを最初のfor文にしてみる
+
+# リファクタリング
+N = int(input())
+A, B, C = map(int, input().split())
+
+ans = 10000
+
+for countA in range(10000):
+    for countB in range(10000):
+        tmp = countA*A + countB*B   # tmp = C円以外の合計値
+        if (N - tmp)%C == 0 and tmp <= N:   # N-tmpがC円で割り切れる、かつ、tmpがN以下（未満だとAとBだけでNを満たすときを考慮できない）
+            countC = (N - tmp)//C
+            if countA + countB + countC < ans:
+                ans = countA + countB + countC
+
+print(ans)
