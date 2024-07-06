@@ -31,3 +31,5 @@ if found:
     print('Yes')
 else:
     print('No')
+
+# 計算量O(N^3) = 100^3 < 10^8
