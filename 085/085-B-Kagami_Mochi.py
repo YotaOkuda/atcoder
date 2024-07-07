@@ -20,5 +20,18 @@ for i in exist:
 
 print(ans)
 
-# 別解
+# 別解１
+N = int(input())
+
+M = 101
+exist = [0]*M
+
+for i in range(N):
+    d = int(input())
+    exist[d] = 1
+
+print(sum(exist))
+
+
+# 別解２
 # len(set(D)) 重複を考慮せず、リストDの中の異なる要素数を得ることができる
