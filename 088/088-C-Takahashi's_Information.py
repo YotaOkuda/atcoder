@@ -33,3 +33,31 @@ else:
     print('No')
 
 # 計算量O(N^3) = 100^3 < 10^8
+
+
+
+# 公式解答
+C = [list(map(int, input().split())) for i in range(3)]
+
+# x[0]は0でも問題ないので最初から決めておく
+x = [0, 0, 0]
+y = [0, 0, 0]
+
+# xを決めたことによるy,yを決めたことによるxを計算
+for i in range(3):
+    y[i] = C[0][i] - x[0]
+for i in range(3):
+    x[i] = C[i][0] - y[0]
+
+flag = True
+
+# x[i] + y[j]がC[i][j]と一致するかどうか
+for i in range(3):
+    for j in range(3):
+        if x[i] + y[j] != C[i][j]:
+            flag = False
+
+if flag:
+    print('Yes')
+else:
+    print('No')
