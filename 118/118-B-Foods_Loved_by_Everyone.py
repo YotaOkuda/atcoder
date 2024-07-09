@@ -32,3 +32,5 @@ for n in exist:
          ans += 1   # 全員好きな食べ物のときインクリメント
 
 print(ans)
+
+# 計算量O(NK+M)     K = リストの長さの平均
