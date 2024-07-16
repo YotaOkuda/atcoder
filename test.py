@@ -1,5 +1,8 @@
-s_1 = ''.join(sorted(str(input())))
-s_2 = sorted(str(input()))
+s = int(input())
 
-print(f's_1:{s_1}')
-print(f's_2:{s_2}')
+if s<10:
+    s += 100
+elif s>10:
+    s += 1
+
+print(s)
