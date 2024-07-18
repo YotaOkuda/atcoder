@@ -26,3 +26,36 @@ for i in range(Q):
 # 答え出力
 for i in ans:
     print(i)
+
+
+
+# リファクタリング
+N, M, Q = map(int, input().split())
+
+G = [[] for i in range(N)]
+
+for i in range(M):
+    u, v = map(int, input().split())
+
+    # 頂点番号を0始まりにする
+    u -= 1
+    v -= 1
+
+    G[u].append(v)
+    G[v].append(u)
+
+col = list(map(int, input().split()))
+
+for i in range(Q):
+    t, x, *y = map(int, input().split())    # 「*」により任意の数を受け取るので，クエリを統一的に扱える
+
+    # 頂点番号を0始まりにする
+    x -= 1
+
+    print(col[x])
+
+    if t == 1:
+        for v in G[x]:
+            col[v] = col[x]
+    else:
+        col[x] = y[0]
