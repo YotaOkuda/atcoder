@@ -17,7 +17,7 @@ for i in range(Q):
     s = list(map(int, input().split()))     # クエリ入力
     if s[0] == 1:               # クエリが1型
        ans.append(C[s[1]-1])    # 頂点xの現在の色を出力
-       for i in G[s[1]-1]:      # スプリンクラー起動
+       for i in G[s[1]-J1]:      # スプリンクラー起動
            C[i-1] = C[s[1]-1]   # 隣接する頂点の色を現在の頂点の色に変更
     elif s[0] == 2:             # クエリが2型
         ans.append(C[s[1]-1])   # 頂点xの現在の色を出力
