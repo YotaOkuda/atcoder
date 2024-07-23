@@ -59,3 +59,5 @@ for i in range(Q):
             col[v] = col[x]
     else:
         col[x] = y[0]
+
+# 計算量 O(QN)

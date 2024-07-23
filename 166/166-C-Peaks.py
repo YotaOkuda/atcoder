@@ -17,7 +17,7 @@ ans = 0
 for i in range(N):
     flag = True
     for j in G[i]:
-        if H[i] < H[j]:
+        if H[i] <= H[j]:
             flag = False
         
     if flag:
@@ -25,4 +25,4 @@ for i in range(N):
     
 print(ans)
 
-# 入力例2に対して違うので直す
+# 計算量 O(N+ M) < 10^8
