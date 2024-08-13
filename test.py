@@ -1,8 +1,19 @@
-s = int(input())
+S = input()
 
-if s<10:
-    s += 100
-elif s>10:
-    s += 1
+n = len(S)
 
-print(s)
+i = 0
+words = []
+
+while i < n:
+	j = i + 1
+	while j < n and S[j].islower():
+		j += 1
+		
+	words.append(S[i:j+1])
+	i = j + 1
+
+words.sort(key=str.lower)
+result = "".join(words)
+
+print(result)
