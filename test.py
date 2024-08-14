@@ -1,19 +1,13 @@
-S = input()
+X = [10, 12, 45, 3, 22, 84, 60]
 
-n = len(S)
+num = [0]*(len(X)+1)
+num_ans = [0]*(len(X)+1)
 
-i = 0
-words = []
+for i in range(len(X)):
+    num[i + 1] = num[i] + X[i]
 
-while i < n:
-	j = i + 1
-	while j < n and S[j].islower():
-		j += 1
-		
-	words.append(S[i:j+1])
-	i = j + 1
+for i in range(len(num)):
+    num_ans[i] = num[i]%7
 
-words.sort(key=str.lower)
-result = "".join(words)
-
-print(result)
+print(num)
+print(num_ans)
