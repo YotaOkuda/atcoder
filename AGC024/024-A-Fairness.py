@@ -9,3 +9,7 @@ if abs(ans) > 10**18:
     print('Unfair')
 else:
     print(ans)
+    
+# 周期性
+# Kが偶数の時は答えはA-B
+# Kが奇数の時は答えはB-A
