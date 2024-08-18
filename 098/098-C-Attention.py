@@ -23,14 +23,14 @@ for i in range(N):
         no_w = west[i+1] - 1  # 現在のwより左のwの数
     else:
         no_w = west[i+1]      # 現在のeより左のwの数
-    
+
     no_e = east[-1] - east[i+1]  # 現在のeから最後までのeの数
-    
+
     no = no_w + no_e
     ans = min(ans, no)
 
 print(ans)
 
 
-# 計算量 O(N) < 10^8 
+# 計算量 O(N) < 10^8
 # max.N = 3 * 10^5
