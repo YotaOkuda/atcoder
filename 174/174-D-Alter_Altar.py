@@ -13,12 +13,11 @@ for i in range(R_count, len(C)):
 print(ans)
 
 # 操作２は不要、操作1だけで完結する
-
 # 計算量 O(N)
 
 
 
-# 途中まで考えた事
+# 途中まで考えた事 #
 import re
 
 N = int(input())
