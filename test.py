@@ -1,1 +1,3 @@
-print(0%3)
+S = 'ABCDEFG'
+print(S[0: 15])
+#print(S)
