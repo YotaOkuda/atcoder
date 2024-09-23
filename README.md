@@ -1,4 +1,4 @@
-# 競技プログラミングAtCoder記録（AtCoder Competitive Programming Record）
+# 競技プログラミングAtCoder記録  （AtCoder Competitive Programming Record）
 
 ## File Structure
 
