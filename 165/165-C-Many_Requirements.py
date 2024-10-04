@@ -98,3 +98,36 @@ def rec(A):
 # 数列Aを全列挙して調べる
 A = []
 print(rec(A))
+
+
+
+## 模範回答2 ##
+from itertools import combinations_with_replacement
+
+N, M, Q = map(int, input().split())
+a = [0] * Q
+b = [0] * Q
+c = [0] * Q
+d = [0] * Q
+for i in range(Q):
+    a[i], b[i], c[i], d[i] = map(int, input().split())
+    
+    a[i] -= 1
+    b[i] -= 1
+
+    
+def calc(A):
+    sum = 0
+    for ai, bi, ci, di in zip(a, b, c, d):
+        if A[bi] - A[ai] == ci:
+            sum += di
+        
+    return sum
+
+
+result = 0
+
+for A in combinations_with_replacement(range(1, M + 1), N):
+    result = max(result, calc(A))
+
+print(result)
