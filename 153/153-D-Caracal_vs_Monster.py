@@ -12,6 +12,7 @@ print(rec(H, 1))
 # 計算量 O(logH)
 
 
+
 # 別解１
 H = int(input())
 def rec(H):
