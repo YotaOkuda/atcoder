@@ -1,44 +1,19 @@
-N, M, Q = map(int, input().split())
+S = input()
+N = len(S)
+ans = 0
 
-a = [0] * Q
-b = [0] * Q
-c = [0] * Q
-d = [0] * Q
-for i in range(Q):
-    #上から順番に代入していく
-    a[i], b[i], c[i], d[i] = map(int, input().split())
-    
+# Sに+を挟む方法は、Sに文字と文字の間(N-1個ある)に
+# それぞれ挟むか挟まないかを決めれば決まるから2^(N-1)通りある。
 
-def rec(A):
-    if len(A) == N:
-        print(A)
-        return
-    
-    for v in range(1, M + 1):
-        A.append(v)
-        rec(A)
-        A.pop()
-        
-rec([])
-'''
-N, M, Q = map(int, input().split())
+# それを長さN-1のbitに対応させることで全探索することで答えを求める。
+# 例: S = 12345 bit = 110 なら bit = 0110 とみなして 12+3+45 を答えに足していく。
 
-a = [0] * Q
-b = [0] * Q
-c = [0] * Q
-d = [0] * Q
-for i in range(Q):
-    #上から順番に代入していく
-    a[i], b[i], c[i], d[i] = map(int, input().split())
-
-def calc(A):
-    sum = 0
-    for i in range(Q):
-        if A[b[i] - 1] - A[a[i] - 1] == c[i]:
-            sum += d[i]
-    
-    return sum
-
-A = [1, 3, 4]
-print(calc(A))
-'''
+for bit in range(1 << (N - 1)):  # 1 << (N-1) は 2^(N-1) と同じ
+    s = S[0]
+    for i in range(N - 1):  # どこにbitが立ってるかを確認していく
+        if bit & (1 << i):  # 下からi番目にbitが立っているとき
+            ans += int(s)
+            s = ""
+        s += S[i + 1]
+    ans += int(s)
+print(ans)
