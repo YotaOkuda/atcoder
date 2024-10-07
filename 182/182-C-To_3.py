@@ -31,3 +31,6 @@ if ans == 100:
     print(-1)
 else:
     print(ans)
+    
+
+# 計算量 O(len(N)^2)
