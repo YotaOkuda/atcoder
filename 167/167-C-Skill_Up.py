@@ -32,3 +32,6 @@ if ans == sum(C) + 1:
     print(-1)
 else:
     print(ans)
+    
+
+# 計算量 O(2^N * N * M) = 600000 < 10^8
