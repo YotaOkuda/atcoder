@@ -20,6 +20,8 @@ for num in range(1<<d):
             # 桁を消した個数をカウント
             ans_tmp += 1
     
+    print(f'N_tmp:{N_tmp}')
+    
     # N_tmpが空なら
     if N_tmp == "":
         continue
