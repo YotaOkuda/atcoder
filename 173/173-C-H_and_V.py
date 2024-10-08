@@ -33,6 +33,7 @@ for num_H in range(1 << H):
         # 黒の数をカウント
         count = sum([row.count('#') for row in tmp_C])                    
         
+        # 黒の数が K と一致するなら、その行と列の選び方をカウント
         if count == K:
             ans += 1
 
