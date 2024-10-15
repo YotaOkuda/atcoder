@@ -2,9 +2,9 @@
 
 ## 日々書いたコードをアップロードしていきます
 
-## ファイル構成（File Structure）
+### ファイル構成（File Structure）
 
-- **フォルダネーム : XXX ← 三桁の数値（Folder Name : XXX ← three-digit number）**  
+- **フォルダネーム : XXX ← 3桁の数値（Folder Name : XXX ← three-digit number）**  
   **ABC**（AtCoder Beginner Contest）コンテストに関連するファイルがここに保存されています。  
   Files related to **ABC** contests are stored here.
   
