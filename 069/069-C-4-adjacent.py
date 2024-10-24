@@ -8,6 +8,7 @@ even_two_count = 0
 # 奇数の数字をカウント
 odd_count = 0
 
+# 各数字がどれにあてはまるかカウントする
 for a in A:
     if a % 4 == 0:
         even_four_count += 1
