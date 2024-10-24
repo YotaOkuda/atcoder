@@ -19,3 +19,7 @@
 - **その他（Other）**  
   上記のカテゴリに該当しないファイルはここに配置されます。  
   Any files that don't fit into the categories above are placed here.
+
+### コミットメッセージ
+解いた問題のレベルが書かれています  
+A, B 問題を解いていたら「A, B」
