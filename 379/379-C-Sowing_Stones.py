@@ -71,3 +71,31 @@ else:
     print(-1)
     
 # 計算量 O(M log M), 最初のソートが一番かかる, while の処理は O(M)
+
+
+
+# --- 別解 ---
+n, m = map(int, input().split())
+x = list(map(int, input().split()))
+a = list(map(int, input().split()))
+
+if sum(a) != n:
+    print(-1)
+    exit()
+
+# 1 マス目に全コマがあった場合の操作回数
+ans = n*(n+1)//2
+num = 0
+
+# x を基準としてソートし、全処理
+for idx, cnt in sorted(zip(x, a), key=lambda x: x[0]):
+    # コマで埋められるか
+    if num < idx-1:
+        ans = -1
+        break
+    # マスを更新
+    num += cnt 
+    # 既に配置されているコマに対する操作回数を引いていく
+    ans -= cnt*idx
+
+print(ans)
