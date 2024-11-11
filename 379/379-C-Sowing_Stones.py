@@ -74,7 +74,7 @@ else:
 
 
 
-# --- 別解 ---
+# --- 他の人の別解 ---
 n, m = map(int, input().split())
 x = list(map(int, input().split()))
 a = list(map(int, input().split()))
