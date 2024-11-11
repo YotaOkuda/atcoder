@@ -75,6 +75,7 @@ else:
 
 
 
+'''
 # --- 他の人の別解 ---
 n, m = map(int, input().split())
 x = list(map(int, input().split()))
@@ -100,3 +101,4 @@ for idx, cnt in sorted(zip(x, a), key=lambda x: x[0]):
     ans -= cnt*idx
 
 print(ans)
+'''
