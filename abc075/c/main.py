@@ -1,3 +1,4 @@
+# process of solving
 N, M = map(int, input().split())
 
 G = [[] for i in range(N)]
