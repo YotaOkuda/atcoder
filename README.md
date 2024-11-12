@@ -4,24 +4,21 @@
 
 ### ファイル構成（File Structure）
 
-- **フォルダネーム : XXX ← 3桁の数値（Folder Name : XXX ← three-digit number）**  
+- **フォルダネーム : abcXXX ← XXXは3桁の数値（Folder Name : abcXXX ← XXX is three-digit number）**  
   **ABC**（AtCoder Beginner Contest）コンテストに関連するファイルがここに保存されています。  
   Files related to **ABC** contests are stored here.
   
-- **フォルダーネーム : ARC + XXX（Folder Name : ARC + XXX）**  
+- **フォルダーネーム : arcXXX（Folder Name : arcXXX）**  
   **ARC**（AtCoder Regular Contest）コンテストに関連するファイルがここに保存されています。  
   Files related to **ARC** contests are stored here.
 
-- **フォルダーネーム : AGC + XXX（Folder Name : AGC + XXX）**  
+- **フォルダーネーム : agcXXX（Folder Name : agcXXX）**  
   **AGC**（AtCoder Grand Contest）コンテストに関連するファイルがここに保存されています。  
   Files related to **AGC** contests are stored here.
 
-- **その他（Other）**  
-  上記のカテゴリに該当しないファイルはここに配置されます。  
-  Any files that don't fit into the categories above are placed here.
 
 <br>
 
-### コミットメッセージ
-解いた問題のレベルが書かれています  
+### コミットメッセージ命名規則
+解いた問題のレベルをコミットメッセージとする  
 （例）A, B 問題を解いていたら「A, B」
