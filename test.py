@@ -1,3 +1,5 @@
 C = [['.', '#', '#'], ['.', '.', '.']]
-C[0][2] = '.'
-print(C)
+count = 0
+for c in C:
+    count += c.count('.')
+print(count)
