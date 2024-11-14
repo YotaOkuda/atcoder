@@ -61,6 +61,7 @@ else:
     white_count = 0
     for s in S:
         white_count += s.count('.')
+    # white_count = sum(line.count('.') for line in S)
         
     print(white_count - dist[H - 1][W - 1] - 1)
 
