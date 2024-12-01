@@ -1,3 +1,9 @@
+'''
+<方針>
+- 文字列 S を後ろから見ていき、'@' なら '.' に変える
+- D 日間経過したら終了
+'''
+
 N, D = map(int, input().split())
 S = list(input())
 
@@ -11,3 +17,5 @@ for i in range(N - 1, -1, -1):
         break
 
 print("".join(map(str, S)))
+
+# 計算量 O(N)

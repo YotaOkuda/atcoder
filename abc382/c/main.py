@@ -2,47 +2,49 @@ N, M = map(int, input().split())
 A = list(map(int, input().split()))
 B = list(map(int, input().split()))
 
-minA = min(A)
-for b in B:
-    if minA > b:
-        print(-1)
-    else:
-        for i, a in enumerate(A):
-            if a <= b:
-                print(i + 1)
-                break
-
-
 '''
 indicesA = [*range(len(A))]
 sorted_indicesA = sorted(indicesA, key=lambda i: A[i])
 sorted_A = [A[i] for i in sorted_indicesA]
-
-indicesB = [*range(len(B))]
-sorted_indicesB = sorted(indicesB, key=lambda i: B[i])
-sorted_B = [B[i] for i in sorted_indicesB]
-
-ans = []
-
-print(f'sorted_A:{sorted_A}')
-print(f'sorted_indicesA:{sorted_indicesA}')
-print(f'sorted_B:{sorted_B}')
-print(f'sorted_indicesB:{sorted_indicesB}')
-
-for b in sorted_B:
-    if sorted_A[0] > b:
-        ans.append(-1)
-    elif sorted_A[0] == b:
-        ans.append(sorted_indicesA[0] + 1)
-    else:
-        for i, a in enumerate(sorted_A):
-            if a > b:
-                #print(f'i:{i}, a:{a}, b:{b}')
-                ans.append(sorted_indicesA[i - 1] + 1)
-                #sorted_A.pop(i - 1)
-                #sorted_indicesA.pop(i - 1)
-                break
-
-for indexB in sorted_indicesB:
-    print(ans[indexB])
 '''
+
+indexed_list = sorted([(value, idx) for idx, value in enumerate(A)])
+result = []
+seen = set()
+for value, idx in indexed_list:
+    if value not in seen:
+        result.append([value, idx])
+        seen.add(value)
+
+minA = min(A)
+
+def isOK(index, key):
+    if result[index][0] >= key:
+        return True
+    else:
+        return False
+    
+def binary_serch(key):
+    left = -1
+    right = len(result)
+    
+    while abs(right - left) > 1:
+        mid = int((left + right) / 2)
+        # print(left, mid, right)
+        
+        if isOK(mid, key):
+            right = mid
+        else:
+            left = mid
+            
+    if left == -1:
+        return result[0][1]
+    else:
+        return result[left][1]
+
+for b in B:
+    if b < minA:
+        print(-1)
+    else:
+        print(binary_serch(b) + 1)
+    
