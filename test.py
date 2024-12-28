@@ -1,5 +1,8 @@
-ans = []
+from collections import Counter
 
-ans.append('1' * 3)
+K = int(input())
+S = str(input())
+T = str(input())
 
-print(ans)
+diff = Counter(S) - Counter(T)
+print(diff)
