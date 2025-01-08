@@ -11,7 +11,7 @@
   - 最後の項が 7 の場合 → 残りの部分の総和は 7 - 7 = 0
   よって dp[i] = dp[i - 3] + dp[i - 4] + ... + dp[0]
 '''
-
+'''
 S = int(input())
 
 DIVISOR = 10 ** 9 + 7
@@ -28,5 +28,32 @@ for i in range(1, S + 1):
         dp[i] %= DIVISOR
         
 print(dp[S])
+'''
 
 # 計算量 O(S^2)
+
+
+# --- 累積和を用いて計算量を削減 ---
+
+S = int(input())
+
+DIVISOR = 10 ** 9 + 7
+
+# dp 用の配列
+dp = [0] * (S + 1)
+dp[0] = 1
+
+# 累積和用の配列（sdp[i] は総和が 0 から i までの dp の累積和）
+sdp = [0] * (S + 1)
+sdp[0] = 1
+
+# 累積和を用いて dp を求める
+for i in range(1, S + 1):
+  if i >= 3:
+    dp[i] = sdp[i - 3]
+  
+  sdp[i] = (sdp[i - 1] + dp[i]) % DIVISOR  # 累積和を更新
+    
+print(dp[S])
+
+# 計算量 O(S)
