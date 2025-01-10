@@ -1,30 +1,24 @@
 N = int(input())
 
-dp = [N + 1] * (N + 1)
-dp[0] = 1
-dp[1] = 1
+INF = 110000
+dp = [INF] * (N + 1)
+dp[0] = 0
 
-def generate_powers(limit):
-    powers = set()
-    value1, value2 = 6, 9
-    while value1 <= limit:
-        powers.add(value1)
-        value1 *= value1
-        
-    while value2 <= limit:
-        powers.add(value2)
-        value2 *= value2
-    
-    return powers
-
-powers = generate_powers(N)
+pow6, pow9 = [], []
+base6, base9 = 1, 1
+while base6 <= N:
+    pow6.append(base6)
+    base6 *= 6
+while base9 <= N:
+    pow9.append(base9)
+    base9 *= 9
 
 for i in range(1, N + 1):
-    if i in powers:
-        dp[i] = 1
-    else:
-        for j in range(1, i // 2 + 1):
-            dp[i] = min(dp[i], dp[j] + dp[i - j])
+    for x in pow6:
+        if i - x >= 0:
+            dp[i] = min(dp[i], dp[i - x] + 1)
+    for y in pow9:
+        if i - y >= 0:
+            dp[i] = min(dp[i], dp[i - y] + 1)
         
 print(dp[N])
-# print(dp)
