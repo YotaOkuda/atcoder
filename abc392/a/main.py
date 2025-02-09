@@ -1,3 +1,8 @@
+'''
+<方針>
+- 全ての組み合わせを確かめる
+'''
+
 A1, A2, A3 = map(int, input().split())
 
 flag = False
@@ -9,3 +14,5 @@ elif A2 * A3 == A1:
   flag = True
 
 print('Yes' if flag else 'No')
+
+# 計算量 O(1)
