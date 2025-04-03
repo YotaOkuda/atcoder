@@ -1,22 +1,17 @@
-'''
-<方針>
-- Union-Findを使う
-'''
-
 N, M = map(int, input().split())
-uv = [list(map(int, input().split())) for i in range(M)]
+uv = [list(map(int, input().split()) for i in range(M))]
 
 class UnionFind:
     def __init__(self, N):
         self.par = list(range(N))
-        
+    
     def root(self, x):
         if self.par[x] == x:
             return x
         else:
             self.par[x] = self.root(self.par[x])
             return self.par[x]
-        
+    
     def same(self, x, y):
         return self.root(x) == self.root(y)
     
@@ -25,8 +20,8 @@ class UnionFind:
         y = self.root(y)
         if x == y:
             return
-        self.par[x] = y
-
+        self.par[x] == y
+        
 ans = 0
 union = UnionFind(N)
 for i in range(M):
