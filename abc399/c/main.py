@@ -4,7 +4,7 @@
 - 各頂点が同じグループ（繋がっているか）かを UnionFind木 を用いて判定する
 - 重複していれば不要な辺とみなすことができる
 '''
-
+'''
 N, M = map(int, input().split())
 uv = [list(map(int, input().split())) for i in range(M)]
 
@@ -46,5 +46,24 @@ for i in range(M):
     # 違うグループならばマージする
     else:
         union.unite(u, v)
+
+print(ans)
+'''
+
+from atcoder.dsu import DSU
+
+n, m = map(int, input().split())
+uv = [list(map(int, input().split())) for i in range(m)]
+
+ans = 0
+union = DSU(n)
+for i in range(m):
+    u = uv[i][0] - 1
+    v = uv[i][1] - 1
+
+    if union.same(u, v):
+        ans += 1
+    else:
+        union.merge(u, v)
 
 print(ans)
