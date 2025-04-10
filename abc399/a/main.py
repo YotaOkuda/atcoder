@@ -1,3 +1,8 @@
+'''
+<方針>
+- 先頭から順に比べていく
+'''
+
 N = int(input())
 S = str(input())
 T = str(input())
@@ -8,3 +13,5 @@ for i in range(N):
         ans += 1
 
 print(ans)
+
+# 計算量 O(N)
