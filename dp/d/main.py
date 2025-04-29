@@ -20,9 +20,8 @@ for i in range(N):
     for j in range(W + 1):
         if j - w[i] >= 0:
             dp[i + 1][j] = max(dp[i + 1][j], dp[i][j - w[i]] + v[i])
-        else:
-            dp[i + 1][j] = max(dp[i + 1][j], dp[i][j])
-    i_max = max(dp[i + 1])
-    ans = max(ans, i_max)
 
-print(ans)
+        dp[i + 1][j] = max(dp[i + 1][j], dp[i][j])
+
+
+print(dp[N][W])
