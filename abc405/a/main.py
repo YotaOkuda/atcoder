@@ -1,3 +1,7 @@
+'''
+<方針>
+- div によって、それぞれレート範囲化を判定する
+'''
 R, X = map(int, input().split())
 
 if X == 1:
@@ -10,3 +14,5 @@ else:
         print('Yes')
     else:
         print('No')
+
+# 計算量 O(1)
