@@ -6,6 +6,7 @@
 - dp[i][0] が未更新のものに対してだけ更新作業を行う
 （更新済みのものを'no' にしてしまい、以降の更新に影響を及ぼすため）
 '''
+'''
 N = int(input())
 P = list(map(int, input().split()))
 
@@ -29,5 +30,32 @@ for point in dp:
         ans += 1
 
 print(ans)
+'''
 
 # 計算量 O(N * sum(P)) = O(10^6)
+
+
+# リファクタリング
+'''
+<方針>
+- 各P[i]に対応するdp[i]を作成する
+- dp[i][j]に対して、dp[i-1][j]がTrueの場合
+  1. 選ばないdp[i][j] = True
+  2. 選ぶdp[i][j+P[i-1]] = True
+'''
+N = int(input())
+P = list(map(int, input().split()))
+
+dp = [[False] * 10001 for _ in range(N + 1)]
+dp[0][0] = True
+
+for i in range(1, N + 1):
+    for j in range(10001):
+        if dp[i-1][j]:
+            dp[i][j] = True
+            dp[i][j+P[i-1]] = True
+
+ans = sum(dp[-1])
+
+# 計算量 O(N * 10001) = O(10^6)
+print(ans)
