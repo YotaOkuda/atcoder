@@ -24,4 +24,4 @@ for i in range(N):
 
 print(min(wall))
 
-# 計算量 O(N + M
+# 計算量 O(N + M)
