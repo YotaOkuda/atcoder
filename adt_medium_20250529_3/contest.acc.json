@@ -1,0 +1,64 @@
+{
+  "contest": {
+    "id": "adt_medium_20250529_3",
+    "title": "AtCoder Daily Training MEDIUM 2025/05/29 20:30start",
+    "url": "https://atcoder.jp/contests/adt_medium_20250529_3"
+  },
+  "tasks": [
+    {
+      "id": "abc295_b",
+      "label": "C",
+      "title": "Bombs",
+      "url": "https://atcoder.jp/contests/adt_medium_20250529_3/tasks/abc295_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "abc299_b",
+      "label": "D",
+      "title": "Trick Taking",
+      "url": "https://atcoder.jp/contests/adt_medium_20250529_3/tasks/abc299_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "abc381_c",
+      "label": "E",
+      "title": "11/22 Substring",
+      "url": "https://atcoder.jp/contests/adt_medium_20250529_3/tasks/abc381_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "abc266_c",
+      "label": "F",
+      "title": "Convex Quadrilateral",
+      "url": "https://atcoder.jp/contests/adt_medium_20250529_3/tasks/abc266_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "abc318_d",
+      "label": "G",
+      "title": "General Weighted Max Matching",
+      "url": "https://atcoder.jp/contests/adt_medium_20250529_3/tasks/abc318_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}
