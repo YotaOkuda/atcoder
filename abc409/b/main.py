@@ -7,8 +7,10 @@
 N = int(input())
 A = list(map(int, input().split()))
 
+# 各要素の出現回数をカウントする配列
 num = [0] * (N + 1)
 
+# いもす法でカウントしていく
 for a in A:
     num[0] += 1
     if a + 1 < N + 1:
@@ -19,6 +21,7 @@ for i in range(N + 1):
     num[i] = count + num[i]
     count = num[i]
 
+# 条件を満たす最大値を求める
 ans = 0
 for i in range(N + 1):
     if i <= num[i]:

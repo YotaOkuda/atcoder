@@ -13,24 +13,31 @@
 N, L = map(int, input().split())
 D = list(map(int, input().split()))
 
+# 各点の位置を記録する配列
 points = [0] * L
 
+# 各点の位置を記録する
 points[0] = 1
 dis = 0
 for i in range(N - 1):
     dis += D[i]
+    # 点の位置が円周の範囲を超えたら
     if dis >= L:
         dis -= L
     points[dis] += 1
 
 ans = 0
+# 円周が三等分できないなら正三角形は作れない
 if L % 3 != 0:
     print(0)
 else:
+    # 三分割の間隔
     interval = L // 3
+    # 0 からinterval の範囲を見れば、3点の位置を全て網羅できる
     for a in range(interval):
         b = a + interval
         c = b + interval
+        # 正三角形が作れるか
         if points[a] > 0 and points[b] > 0 and points[c]:
             ans += points[a] * points[b] * points[c]
     print(ans)
