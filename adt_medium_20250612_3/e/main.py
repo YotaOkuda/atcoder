@@ -1,9 +1,19 @@
+'''
+<方針>
+- 通常の再帰で求めていくと、TLE となる
+- メモ化再帰を用いる
+- python では @cache でメモ化することができる
+'''
+
+from functools import cache
 N = int(input())
 
-num = [N]
-ans = 0
-while num:
-    x = num[0]
-    ans += x
-    if x % 2 == 0 and x // 2 > 1:
-        
+@cache
+def f(N):
+    if N == 1:
+        return 0
+    return f(N // 2) + f((N + 1) // 2) + N
+
+print(f(N))
+
+# 計算量 O(logN)

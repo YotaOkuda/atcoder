@@ -1,3 +1,9 @@
+'''
+<方針>
+- 位置を [0, 0] リストで管理する
+- 各方角に対応した、移動の距離と移動の向きを定義する
+'''
+
 N = int(input())
 T = str(input())
 
@@ -24,3 +30,5 @@ for t in T:
             direction = 'North'
 
 print(*position)
+
+# 計算量 O(len(T))

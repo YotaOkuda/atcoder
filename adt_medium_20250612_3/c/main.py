@@ -1,3 +1,8 @@
+'''
+<方針>
+- 二重リストで各 Li をまとめる
+'''
+
 N, Q = map(int, input().split())
 num = []
 for n in range(N):
@@ -11,3 +16,5 @@ for i in range(Q):
 
 for x in ans:
     print(x)
+
+# 計算量 O(N + Q)
