@@ -1,2 +1,5 @@
-N = int(input())
-N, M = map(int, input().split())
+'''
+<方針>
+- M 以下の N 個の数字を使用して、合計が K 以下になるような数列を考える 
+'''
+N, M, K = map(int, input().split())
